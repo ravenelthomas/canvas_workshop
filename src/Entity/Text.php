@@ -6,7 +6,7 @@ use App\Repository\TextRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: TextRepository::class)]
-class Text
+class Text extends Element
 {
     #[ORM\Column(length: 255)]
     private ?string $textColor = null;

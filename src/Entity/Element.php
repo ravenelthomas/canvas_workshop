@@ -10,10 +10,9 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\DiscriminatorColumn(name: "type", type: "string")]
 #[ORM\DiscriminatorMap([
     "image" => "App\Entity\Image",
-    "texte" => "App\Entity\Texte",
-    "qrcode" => "App\Entity\QRCode"
+    "texte" => "App\Entity\Text",
+    "qrcode" => "App\Entity\QrCode"
 ])]
-#[ORM\Entity(repositoryClass: ElementRepository::class)]
 class Element
 {
     #[ORM\Id]
