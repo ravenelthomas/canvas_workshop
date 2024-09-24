@@ -5,6 +5,14 @@ namespace App\Entity;
 use App\Repository\ElementRepository;
 use Doctrine\ORM\Mapping as ORM;
 
+#[ORM\Entity(repositoryClass: "App\Repository\ElementRepository")]
+#[ORM\InheritanceType("JOINED")]
+#[ORM\DiscriminatorColumn(name: "type", type: "string")]
+#[ORM\DiscriminatorMap([
+    "image" => "App\Entity\Image",
+    "texte" => "App\Entity\Texte",
+    "qrcode" => "App\Entity\QRCode"
+])]
 #[ORM\Entity(repositoryClass: ElementRepository::class)]
 class Element
 {

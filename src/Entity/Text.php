@@ -8,11 +8,6 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Entity(repositoryClass: TextRepository::class)]
 class Text
 {
-    #[ORM\Id]
-    #[ORM\GeneratedValue]
-    #[ORM\Column]
-    private ?int $id = null;
-
     #[ORM\Column(length: 255)]
     private ?string $textColor = null;
 
@@ -33,11 +28,6 @@ class Text
 
     #[ORM\Column]
     private ?float $fontSize = null;
-
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
 
     public function getTextColor(): ?string
     {
