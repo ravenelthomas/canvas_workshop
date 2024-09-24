@@ -6,7 +6,7 @@ use App\Repository\QrCodeRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: QrCodeRepository::class)]
-class QrCode
+class QrCode extends Element
 {
     #[ORM\Column(length: 255)]
     private ?string $text = null;
